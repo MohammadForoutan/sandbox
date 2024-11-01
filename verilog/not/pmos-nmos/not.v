@@ -5,15 +5,16 @@ module not_gate (
     output wire out    // Output signal
 );
 
-    // Power supply connections
-    supply1 vdd;    // VDD (positive supply voltage) = 1
-    supply0 gnd;    // GND (ground) = 0
+// Power supply connections
+supply1 vdd;    // VDD (positive supply voltage) = 1
+supply0 gnd;    // GND (ground) = 0
 
-    // PMOS transistor with 6ns delay
-    pmos #(6) p1(out, vdd, a);  // pmos(output, power, input)
+// PMOS transistor with 6ns delay
+// pmos(drain, source, gate)
+pmos #(6) p1(out, vdd, a);  // pmos(output, power, input)
 
-    // NMOS transistor with 4ns delay
-    nmos #(4) n1(out, gnd, a);  // nmos(output, ground, input)
+// NMOS transistor with 4ns delay
+nmos #(4) n1(out, gnd, a);  // nmos(output, ground, input)
 
 endmodule
 
