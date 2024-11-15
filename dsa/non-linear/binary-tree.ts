@@ -15,6 +15,9 @@ export class BinaryTree<T> {
     this.root = null;
   }
 
+  /*
+   * insert binary node to binary tree
+   */
   insert(data: T): void {
     const newNode = new BinaryTreeNode(data);
     if (this.root === null) {
