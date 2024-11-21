@@ -1,0 +1,252 @@
+$date
+	Thu Nov 21 21:49:04 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_fulladd4 $end
+$var wire 4 ! sum [3:0] $end
+$var wire 1 " c_out $end
+$var reg 4 # a [3:0] $end
+$var reg 4 $ b [3:0] $end
+$var reg 1 % c_in $end
+$scope module uut $end
+$var wire 4 & a [3:0] $end
+$var wire 4 ' b [3:0] $end
+$var wire 1 % c_in $end
+$var wire 4 ( sum [3:0] $end
+$var wire 1 " c_out $end
+$var wire 1 ) c3 $end
+$var wire 1 * c2 $end
+$var wire 1 + c1 $end
+$scope module fa0 $end
+$var wire 1 , a $end
+$var wire 1 - b $end
+$var wire 1 . c1 $end
+$var wire 1 / c2 $end
+$var wire 1 % c_in $end
+$var wire 1 + c_out $end
+$var wire 1 0 s1 $end
+$var wire 1 1 sum $end
+$upscope $end
+$scope module fa1 $end
+$var wire 1 2 a $end
+$var wire 1 3 b $end
+$var wire 1 4 c1 $end
+$var wire 1 5 c2 $end
+$var wire 1 + c_in $end
+$var wire 1 * c_out $end
+$var wire 1 6 s1 $end
+$var wire 1 7 sum $end
+$upscope $end
+$scope module fa2 $end
+$var wire 1 8 a $end
+$var wire 1 9 b $end
+$var wire 1 : c1 $end
+$var wire 1 ; c2 $end
+$var wire 1 * c_in $end
+$var wire 1 ) c_out $end
+$var wire 1 < s1 $end
+$var wire 1 = sum $end
+$upscope $end
+$scope module fa3 $end
+$var wire 1 > a $end
+$var wire 1 ? b $end
+$var wire 1 @ c1 $end
+$var wire 1 A c2 $end
+$var wire 1 ) c_in $end
+$var wire 1 " c_out $end
+$var wire 1 B s1 $end
+$var wire 1 C sum $end
+$upscope $end
+$upscope $end
+$scope task apply_test $end
+$var reg 4 D a_test [3:0] $end
+$var reg 4 E b_test [3:0] $end
+$var reg 1 F c_in_test $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0F
+b0 E
+b0 D
+0C
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+b0 (
+b0 '
+b0 &
+0%
+b0 $
+b0 #
+0"
+b0 !
+$end
+#10000
+b10 !
+b10 (
+17
+1+
+1.
+1-
+1,
+b1 $
+b1 '
+b1 #
+b1 &
+b1 E
+b1 D
+#20000
+07
+1=
+b101 !
+b101 (
+11
+0+
+1*
+10
+0.
+14
+13
+0,
+12
+b11 $
+b11 '
+b10 #
+b10 &
+b11 E
+b10 D
+#30000
+1C
+1)
+15
+1*
+01
+1+
+b1000 !
+b1000 (
+0=
+1;
+16
+04
+00
+1.
+1<
+03
+1,
+18
+b1 $
+b1 '
+b111 #
+b111 &
+b1 E
+b111 D
+#40000
+1"
+b0 !
+b0 (
+0C
+1A
+1B
+1>
+b1111 #
+b1111 &
+b1111 D
+#50000
+17
+05
+1=
+0;
+1C
+0A
+06
+14
+0<
+1:
+0B
+1@
+b1111 !
+b1111 (
+11
+13
+19
+1?
+1%
+b1111 $
+b1111 '
+1F
+b1111 E
+#60000
+07
+15
+0C
+1A
+1*
+1"
+01
+1/
+1+
+b0 !
+b0 (
+0=
+1;
+1)
+16
+04
+1B
+0@
+10
+0.
+1<
+0:
+03
+0?
+0,
+08
+b101 $
+b101 '
+b1010 #
+b1010 &
+b101 E
+b1010 D
+#70000
+13
+09
+02
+18
+b11 $
+b11 '
+b1100 #
+b1100 &
+b11 E
+b1100 D
+#80000
