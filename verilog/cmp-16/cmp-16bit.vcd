@@ -1,0 +1,64 @@
+$date
+	Tue Dec  3 17:29:04 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_comparator_16bit $end
+$var wire 1 ! less_than $end
+$var wire 1 " greater_than $end
+$var wire 1 # equal $end
+$var reg 16 $ A [15:0] $end
+$var reg 16 % B [15:0] $end
+$scope module uut $end
+$var wire 16 & A [15:0] $end
+$var wire 16 ' B [15:0] $end
+$var wire 1 ! less_than $end
+$var wire 1 " greater_than $end
+$var wire 1 # equal $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b10 '
+b1 &
+b10 %
+b1 $
+0#
+0"
+1!
+$end
+#10000
+b1111111111111110 %
+b1111111111111110 '
+1"
+0!
+b1111111111111111 $
+b1111111111111111 &
+#20000
+1#
+b1001000110100 %
+b1001000110100 '
+0"
+0!
+b1001000110100 $
+b1001000110100 &
+#30000
+b0 %
+b0 '
+0!
+1#
+b0 $
+b0 &
+#40000
+b1001000110100 %
+b1001000110100 '
+1"
+0#
+b1010101111001101 $
+b1010101111001101 &
+#50000
