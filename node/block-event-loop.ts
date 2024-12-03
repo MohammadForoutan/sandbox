@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Response } from "express";
 const app = express();
 function spromise() {
   return new Promise((res, rej) => res(0));
@@ -16,13 +16,14 @@ app.get("/block", async (req, res) => {
   res.send({ j });
 });
 
-app.get("/all", async (req, res) => {
+app.get("/all", async (req, res: Response) => {
   const flag = req.query["flag"];
   const promises = [spromise(), spromise(), spromise(), fpromise()];
   try {
     if (flag === "all") {
       const result = await Promise.all(promises);
       res.send({ status: "success", result });
+      res.
     } else {
       const result = await Promise.allSettled(promises);
       res.send({ status: "success", result });

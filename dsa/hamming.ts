@@ -1,5 +1,5 @@
 function hamming(str: string, str2: string): number {
-  if (str.length !== str2.length) throw new Error("should same length")
+  if (str.length !== str2.length) throw new Error("should same length");
 
   let dist = 0;
 
@@ -8,5 +8,5 @@ function hamming(str: string, str2: string): number {
   return dist;
 }
 
-const res = hamming("raza", "reze")
-console.log({ res })
+const res = hamming("raza", "reze");
+console.log({ res });
