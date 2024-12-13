@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@std/csv": "npm:@jsr/std__csv@^1.0.4",
     "express": "^4.21.1"
   },
   "devDependencies": {
