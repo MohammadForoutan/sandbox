@@ -1,0 +1,72 @@
+{
+  "mode": "disable",
+  "sync": false,
+  "autoBackup": false,
+  "passthrough": "",
+  "theme": "",
+  "container": {
+    "incognito": "",
+    "container-1": "",
+    "container-2": "",
+    "container-3": "",
+    "container-4": ""
+  },
+  "commands": {
+    "setProxy": "",
+    "setTabProxy": "",
+    "quickAdd": ""
+  },
+  "data": [
+    {
+      "active": true,
+      "title": "nekoray",
+      "type": "socks5",
+      "hostname": "localhost",
+      "port": "2080",
+      "username": "",
+      "password": "",
+      "cc": "",
+      "city": "",
+      "color": "#48d1cc",
+      "pac": "",
+      "pacString": "",
+      "proxyDNS": true,
+      "include": [],
+      "exclude": []
+    },
+    {
+      "active": true,
+      "title": "oblivion",
+      "type": "socks5",
+      "hostname": "localhost",
+      "port": "8086",
+      "username": "",
+      "password": "",
+      "cc": "",
+      "city": "",
+      "color": "#e66100",
+      "pac": "",
+      "pacString": "",
+      "proxyDNS": true,
+      "include": [],
+      "exclude": []
+    },
+    {
+      "active": true,
+      "title": "hiddify",
+      "type": "socks5",
+      "hostname": "localhost",
+      "port": "12334",
+      "username": "",
+      "password": "",
+      "cc": "",
+      "city": "",
+      "color": "#cd853f",
+      "pac": "",
+      "pacString": "",
+      "proxyDNS": true,
+      "include": [],
+      "exclude": []
+    }
+  ]
+}
