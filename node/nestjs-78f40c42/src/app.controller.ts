@@ -4,6 +4,7 @@ import {
   Get,
   Param,
   Post,
+  Req,
   UseInterceptors,
   UsePipes,
 } from '@nestjs/common';
@@ -13,9 +14,12 @@ import { Cat } from './cat.interface';
 import { IsAgeLowerThanPipe } from './common/pipes';
 import { InjectPinoLogger, PinoLogger } from 'nestjs-pino';
 import {
+  CustomHeadersInterceptor,
   LoggingInterceptor,
   SimpleCachingInterceptor,
 } from './common/interceptors';
+
+import { Request } from 'express';
 
 @ApiTags('App')
 @Controller({ version: '1', path: '' })
@@ -28,7 +32,9 @@ export class AppController {
   ) {}
 
   @Get()
-  getHello(): string {
+  @UseInterceptors(CustomHeadersInterceptor)
+  getHello(@Req() request: Request): string {
+    this.logger.info(`CUSTOM_ID: ${request.headers['x-custom-id']}`);
     this.logger.info(`${AppController.name} Starting getHello`);
     return this.appService.getHello();
   }
