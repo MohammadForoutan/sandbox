@@ -7,6 +7,8 @@ import {
   Req,
   UseInterceptors,
   UsePipes,
+  Headers,
+  Ip,
 } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ApiBody, ApiTags } from '@nestjs/swagger';
@@ -20,6 +22,7 @@ import {
 } from './common/interceptors';
 
 import { Request } from 'express';
+import { CurrentUser } from './common/decorators';
 
 @ApiTags('App')
 @Controller({ version: '1', path: '' })
@@ -33,10 +36,23 @@ export class AppController {
 
   @Get()
   @UseInterceptors(CustomHeadersInterceptor)
-  getHello(@Req() request: Request): string {
+  getHello(
+    @CurrentUser() user: any,
+    @Req() request: Request,
+    @Headers('x-custom-id') customId: string,
+    @Headers() allHeaders,
+    @Ip() ip: string,
+  ) {
     this.logger.info(`CUSTOM_ID: ${request.headers['x-custom-id']}`);
+    this.logger.info(`CUSTOM_ID[Decorator]: ${customId}`);
     this.logger.info(`${AppController.name} Starting getHello`);
-    return this.appService.getHello();
+    return {
+      ip,
+      customId,
+      allHeaders,
+      user: user ?? 'no-login',
+    };
+    // return this.appService.getHello();
   }
 
   @UseInterceptors(LoggingInterceptor)
