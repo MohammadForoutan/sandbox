@@ -1,0 +1,55 @@
+# Dependencies
+node_modules
+pnpm-lock.yaml
+
+# Source control
+.git
+.gitignore
+.github
+
+# IDE
+.idea
+.vscode
+*.sublime-workspace
+*.sublime-project
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Build output
+dist
+build
+*.tsbuildinfo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage
+.nyc_output
+test
+__tests__
+*.spec.ts
+*.test.ts
+
+# Docker
+Dockerfile*
+docker-compose*
+.docker
+
+# Misc
+.DS_Store
+*.swp
+*.swo
+.npmrc
+.npmignore
+README.md
+LICENSE
+*.md
