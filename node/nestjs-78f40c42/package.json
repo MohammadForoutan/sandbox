@@ -24,6 +24,7 @@
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.3.0",
     "@nestjs/core": "^10.0.0",
+    "@nestjs/cqrs": "^10.2.8",
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/swagger": "^8.1.0",
     "nestjs-pino": "^4.1.0",
@@ -68,6 +69,10 @@
     "*.js": "eslint --fix",
     "*.json": "prettier --write",
     "*.md": "prettier --write"
+  },
+  "volta": {
+    "node": "22.12.0",
+    "npm": "10.9.0"
   },
   "jest": {
     "moduleFileExtensions": [
