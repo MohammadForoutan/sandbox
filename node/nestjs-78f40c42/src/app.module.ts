@@ -5,9 +5,10 @@ import { CommonModule } from './common/common.module';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { HttpExceptionFilter } from './common/filters';
 import { CustomHeadersInterceptor } from './common/interceptors';
+import { CatsModule } from './modules/cats/cats.module';
 
 @Module({
-  imports: [CommonModule],
+  imports: [CommonModule, CatsModule],
   controllers: [AppController],
   providers: [
     AppService,

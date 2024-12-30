@@ -1,0 +1,43 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.IO Test Client</title>
+    <!-- Load Socket.IO from CDN -->
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+  </head>
+  <body>
+    <h1>Socket.IO Test Client</h1>
+    <button id="sendTestEvent">Send Test Event</button>
+    <div id="response"></div>
+
+    <script>
+      // Connect to the Socket.IO server on port 3030
+      const socket = io('http://localhost:3030');
+      function emitWithPromise(socket, event, data) {
+        return new Promise((resolve, reject) => {
+          socket.emit(event, data, (response) => {
+            if (response.error) {
+              reject(response.error); // Handle error response
+            } else {
+              resolve(response); // Handle success response
+            }
+          });
+        });
+      }
+
+      document.getElementById('sendTestEvent').addEventListener('click', async () => {
+        const response = await emitWithPromise(socket, 'findOneCat', 'Hello Server!');
+        console.log('Server response:', response); // Logs: "Pong"
+      });
+
+      // Listen for a response from the server
+      socket.on('testResponse', (data) => {
+        console.log('Received response from server:', data);
+        document.getElementById('response').innerText = data.message;
+      });
+    </script>
+  </body>
+</html>
