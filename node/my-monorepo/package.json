@@ -1,0 +1,19 @@
+{
+  "name": "my-monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:nest-auth": "npm run start --workspace=packages/nestjs-auth",
+    "start:vue-auth": "npm run serve --workspace=packages/vue-auth"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "workspaces": [
+    "packages/shared",
+    "packages/vue-auth",
+    "packages/nestjs-auth"
+  ]
+
+}

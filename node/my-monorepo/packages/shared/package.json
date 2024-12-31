@@ -1,0 +1,18 @@
+{
+  "name": "@my-monorepo/shared",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.19.0",
+    "@typescript-eslint/parser": "^8.19.0",
+    "eslint": "^9.17.0"
+  },
+  "exports": {
+    "./configs/prettier-config": "./configs/prettier-config.js",
+    "./configs/eslint-config": "./configs/eslint-config.js"
+  }
+}
