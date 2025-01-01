@@ -23,6 +23,7 @@ import {
 
 import { Request } from 'express';
 import { CurrentUser } from './common/decorators';
+import { CustomLogger } from './common/dynamic-module-samlpe';
 
 @ApiTags('App')
 @Controller({ version: '1', path: '' })
@@ -32,7 +33,16 @@ export class AppController {
     private readonly appService: AppService,
     @InjectPinoLogger(AppService.name)
     private readonly logger: PinoLogger,
+
+    private readonly customLogger: CustomLogger,
   ) {}
+
+  @Get('hello')
+  sayHello(): string {
+    console.log('CONSOLE_LOG');
+    this.customLogger.log('LOGGER');
+    return 'HELLO \n';
+  }
 
   @Get()
   @UseInterceptors(CustomHeadersInterceptor)
@@ -43,6 +53,8 @@ export class AppController {
     @Headers() allHeaders,
     @Ip() ip: string,
   ) {
+    console.log(`${AppController.name} Starting getHello`);
+    this.customLogger.log('MY CUSTOM LOGGER');
     this.logger.info(`CUSTOM_ID: ${request.headers['x-custom-id']}`);
     this.logger.info(`CUSTOM_ID[Decorator]: ${customId}`);
     this.logger.info(`${AppController.name} Starting getHello`);

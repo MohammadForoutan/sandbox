@@ -6,9 +6,14 @@ import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { HttpExceptionFilter } from './common/filters';
 import { CustomHeadersInterceptor } from './common/interceptors';
 import { CatsModule } from './modules/cats/cats.module';
+import { DynamicLoggerModule } from './common/dynamic-module-samlpe';
 
 @Module({
-  imports: [CommonModule, CatsModule],
+  imports: [
+    CommonModule,
+    CatsModule,
+    DynamicLoggerModule.register({ level: 'log' }),
+  ],
   controllers: [AppController],
   providers: [
     AppService,
